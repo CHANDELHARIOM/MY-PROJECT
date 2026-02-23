@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup-techstore</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+       /* Signup Page Styles */
+       .signup-section {
+           padding: 60px 20px;
+           min-height: calc(100vh - 200px);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background: linear-gradient(135deg, #bcbcbe 0%, #bdb7c2 100%);
+       }
+
+       .signup-container {
+           width: 100%;
+           max-width: 420px;
+           position: relative;
+       }
+
+       .box-pattern {
+           position: absolute;
+           top: -20px;
+           left: -20px;
+           right: -20px;
+           bottom: -20px;
+           background: repeating-linear-gradient(
+               45deg,
+               transparent,
+               transparent 10px,
+               rgba(255, 255, 255, 0.1) 10px,
+               rgba(255, 255, 255, 0.1) 20px
+           );
+           border-radius: 12px;
+           z-index: 1;
+           pointer-events: none;
+       }
+
+       .signup-box {
+           position: relative;
+           z-index: 2;
+           background: white;
+           padding: 3rem;
+           border-radius: 12px;
+           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+           animation: slideIn 0.5s ease-out;
+       }
+
+       @keyframes slideIn {
+           from {
+               opacity: 0;
+               transform: translateY(20px);
+           }
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+
+       .signup-box h1 {
+           text-align: center;
+           color: #2c3e50;
+           margin-bottom: 2.5rem;
+           font-size: 1.8rem;
+       }
+
+       .form-group {
+           margin-bottom: 1.8rem;
+       }
+
+       .form-group label {
+           display: block;
+           margin-bottom: 0.8rem;
+           font-weight: 600;
+           color: #2c3e50;
+           font-size: 0.95rem;
+       }
+
+       .form-group input[type="text"],
+       .form-group input[type="email"],
+       .form-group input[type="password"] {
+           width: 100%;
+           padding: 12px 15px;
+           border: 2px solid #ecf0f1;
+           border-radius: 8px;
+           font-size: 1rem;
+           font-family: inherit;
+           transition: all 0.3s ease;
+           box-sizing: border-box;
+       }
+
+       .form-group input[type="text"]:focus,
+       .form-group input[type="email"]:focus,
+       .form-group input[type="password"]:focus {
+           outline: none;
+           border-color: #667eea;
+           box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+       }
+
+       .btn-primary.btn-block {
+           margin-top: 0.5rem;
+           padding: 13px;
+           font-size: 1.05rem;
+           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           border: none;
+           border-radius: 8px;
+           color: white;
+           font-weight: 600;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           width: 100%;
+       }
+
+       .btn-primary.btn-block:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+       }
+
+       .btn-primary.btn-block:active {
+           transform: translateY(0);
+       }
+
+       .login-link {
+           text-align: center;
+           margin-top: 1.8rem;
+           color: #7f8c8d;
+           font-size: 0.95rem;
+       }
+
+       .login-link a {
+           color: #667eea;
+           text-decoration: none;
+           font-weight: 600;
+           cursor: pointer;
+           transition: color 0.3s ease;
+       }
+
+       .login-link a:hover {
+           color: #764ba2;
+           text-decoration: underline;
+       }
+
+       /* Responsive Design */
+       @media (max-width: 600px) {
+           .signup-box {
+               padding: 2rem;
+           }
+
+           .signup-box h1 {
+               font-size: 1.5rem;
+               margin-bottom: 2rem;
+           }
+
+           .form-group input {
+               font-size: 16px;
+           }
+       }
+   </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🛍️ TechStore</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="loginpage.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Signup Section -->
+    <section class="signup-section">
+        <div class="signup-container">
+            <div class="box-pattern"></div>
+            <div class="signup-box">
+                <h1>Create Account</h1>
+                
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="newUsername">👤 Username:</label>
+                        <input type="text" id="newUsername" placeholder="Create a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newEmail">📧 Email:</label>
+                        <input type="email" id="newEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">🔐 Password:</label>
+                        <input type="password" id="newPassword" placeholder="Create a strong password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">✓ Confirm Password:</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">✓ Create Account</button>
+                </form>
+
+                <p class="login-link">Already have an account? <a href="loginpage.html" id="loginToggle">Login here</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TechStore. All rights reserved.</p>
+            <p>Contact: harshchadel509@gmail.com | Phone:+918390117222</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
